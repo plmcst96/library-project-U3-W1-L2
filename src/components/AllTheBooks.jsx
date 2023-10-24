@@ -7,29 +7,29 @@ class AllTheBooks  extends Component {
     render(){ 
     return(
         <Container fluid>
-            <Row className='d-flex'>
-                <Col md={4} lg={3}>
+            <Row className='d-flex'>    
       
             {
                 books.map((fantasy)=>{
-                    return(     
-                <Card key={fantasy.asin}>
-                    <Card.Img variant="top" src={fantasy.img} />
+                    return(    
+                        <Col md={4} lg={3} key={fantasy.asin}> 
+                <Card className='h-100'>
+                    <Card.Img variant="top" src={fantasy.img} style={{height: '280px'}} />
                     <Card.Body>
                       <Card.Title>{fantasy.title}</Card.Title>
                       <Card.Text>
-                       <p>{fantasy.category}</p>
-                       <p>{fantasy.price}$</p>
+                        {fantasy.category}  
+                      </Card.Text>
+                      <Card.Text>
+                        {fantasy.price}$
                       </Card.Text>
                       <Button variant="primary">Go somewhere</Button>
                     </Card.Body> 
                     </Card>
+                    </Col>
                     )
                 })
-            }
-    
-     
-      </Col>
+            }   
       </Row>
       </Container>
     )
