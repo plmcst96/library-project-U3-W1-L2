@@ -12,17 +12,19 @@ class AllTheBooks  extends Component {
             {
                 books.map((fantasy)=>{
                     return(    
-                        <Col md={4} lg={3} key={fantasy.asin}> 
+                        <Col md={4} lg={2} key={fantasy.asin} className='my-2'> 
                 <Card className='h-100'>
                     <Card.Img variant="top" src={fantasy.img} style={{height: '280px'}} />
-                    <Card.Body>
+                    <Card.Body className='d-flex flex-column justify-content-between'>
                       <Card.Title>{fantasy.title}</Card.Title>
-                      <Card.Text>
+                      <div>
+                      <Card.Text className='m-0'>
                         {fantasy.category}  
                       </Card.Text>
                       <Card.Text>
                         {fantasy.price}$
                       </Card.Text>
+                      </div>
                       <Button variant="primary">Go somewhere</Button>
                     </Card.Body> 
                     </Card>

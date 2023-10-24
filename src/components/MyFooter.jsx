@@ -3,7 +3,7 @@ import { Container, Row, Col } from "react-bootstrap"
 
 const MyFooter = ()=>{
     return (
-        <Container fluid className="bg-dark">
+        <Container fluid className="bg-dark mt-4">
         <Row className="py-3">
           <Col className='d-flex justify-content-center align-items-center'>
           <p>
