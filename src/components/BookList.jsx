@@ -8,7 +8,8 @@ class BookList extends Component{
 
      state = {
         searchValue: "",
-     }
+        // selectedCategory: fantasyBooks,
+     };
 
     render(){
   
@@ -52,7 +53,7 @@ class BookList extends Component{
     .map(book => {
         return(
             <Col xs={6} md={4} lg={2} key={book.asin} className='my-2'> 
-            <SingleBook img= {book.img} title= {book.title} category= {book.category} price= {book.price}/>
+            <SingleBook book={book}/>
             
             </Col>
         )

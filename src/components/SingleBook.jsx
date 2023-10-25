@@ -11,20 +11,20 @@ class SingleBook extends Component {
 
     render(){
     return(
-        <Card key={this.props.asin} style={{height:'100%'}}
+        <Card style={{height:'100%'}}
         className={this.state.selected ? 'border-2 border-danger' : 'border-1'}
         onClick={() =>{
             this.setState({selected: !this.state.selected})
         }}>
-            <Card.Img variant="top" src={this.props.img} style={{height: '280px'}} />
+            <Card.Img variant="top" src={this.props.book.img} style={{height: '280px'}} />
             <Card.Body className='d-flex flex-column justify-content-between'>
-              <Card.Title>{this.props.title}</Card.Title>
+              <Card.Title>{this.props.book.title}</Card.Title>
               <div>
               <Card.Text className='m-0'>
-                {this.props.category}  
+                {this.props.book.category}  
               </Card.Text>
               <Card.Text>
-                {this.props.price}$
+                {this.props.book.price}$
               </Card.Text>
               </div>
             </Card.Body> 
