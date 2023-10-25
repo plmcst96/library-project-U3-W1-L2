@@ -16,10 +16,7 @@ const MyFooter = ()=>{
         </Row>
         <Row>
         <div className='text-center text-white p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
-        © 2023 Copyright - 
-        <a className='text-white' href='#'>
-          - MyLibrary.com
-        </a>
+        © 2023 Copyright - MyLibrary.com
       </div>
         </Row>
       </Container>
