@@ -12,7 +12,7 @@ class SingleBook extends Component {
     render(){
     return(
         <Card key={this.props.asin} style={{height:'100%'}}
-        className={this.state.selected ? 'border-2 border-danger' : 'border-0'}
+        className={this.state.selected ? 'border-2 border-danger' : 'border-1'}
         onClick={() =>{
             this.setState({selected: !this.state.selected})
         }}>
