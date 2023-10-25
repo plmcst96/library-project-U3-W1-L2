@@ -2,13 +2,13 @@
 import { Component } from 'react'
 import SingleBook from './SingleBook'
 import { Container, Row, Col, Form, InputGroup, FormControl } from 'react-bootstrap'
-import { Component } from 'react'
+
 
 class BookList extends Component{
 
-    state = {
-        searchValue: "",
-    }
+    // state = {
+    //     searchValue: "",
+    // }
     render(){
     return(
 <Container fluid>
@@ -35,12 +35,7 @@ class BookList extends Component{
                   />
                 </svg>
               </InputGroup.Text>
-              <FormControl type="search" className="me-2" placeholder="Search" onChange={(e) =>{
-                this.setState({
-                    ...this.state,
-                    searchValue: e.target.value,
-                })
-              }} />
+              <FormControl type="search" className="me-2" placeholder="Search" />
             </InputGroup>
             
           </Form>
@@ -48,7 +43,7 @@ class BookList extends Component{
       </Row>
  
     <Row className='d-flex'> 
-    {this.props.books.filter(this.props.title).map(book => {
+    {this.props.books.map(book => {
         return(
             <Col xs={6} md={4} lg={2} key={book.asin} className='my-2'> 
             <SingleBook img= {book.img} title= {book.title} category= {book.category} price= {book.price}>
