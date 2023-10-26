@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Alert, Button, Form, FormGroup } from "react-bootstrap";
+import { Button, Form, FormGroup } from "react-bootstrap";
 
 const keyApi = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTNhNGE3NmY2ZTNkZDAwMTQ5NWU0MzIiLCJpYXQiOjE2OTgzMTg5NjYsImV4cCI6MTY5OTUyODU2Nn0.aZI0DuOO_gsdwCf_xEW6-DvWQ9rF4oLuse4HcOVYLS4"
 
@@ -25,7 +25,7 @@ class AddComent extends Component {
                 },
             })
             if(res.ok){
-                <Alert variant="info">Prenotazione Salvata!</Alert>
+                alert('commento salvato!')
             } else {
                 throw new Error(
                   "C'è stato un errore nel salvataggio della prenotazione"
@@ -46,8 +46,9 @@ class AddComent extends Component {
               <Form.Control as="textarea" rows={3} value={this.state.comment}
                   onChange={(e) => {
                     this.setState({
+                        allCommenta:{
                         ...this.state.allCommenta,
-                        comment: e.target.value
+                        comment: e.target.value}
                     })
                   }}/>
             </FormGroup>
@@ -55,8 +56,9 @@ class AddComent extends Component {
             <Form.Select aria-label="Rating"  value={this.state.rate}
                   onChange={(e) => {
                     this.setState({
+                        allCommenta:{
                         ...this.state.allCommenta,
-                        rate: e.target.value
+                        rate: e.target.value}
                     })
                   }}>
       <option>Lascia un voto</option>

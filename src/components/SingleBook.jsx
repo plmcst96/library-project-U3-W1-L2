@@ -12,8 +12,10 @@ class SingleBook extends Component {
 
     render(){
     return(
-      
-
+      <>
+            {
+              this.state.selected && <CommentArea bookId ={this.props.book.asin}/>
+            }
         <Card style={{height:'100%'}}
         className={this.state.selected ? 'border-2 border-danger' : 'border-1'}
         onClick={() =>{
@@ -31,13 +33,8 @@ class SingleBook extends Component {
               </Card.Text>
               </div>
             </Card.Body> 
-
-            {
-              this.state.selected && <div><CommentArea bookId ={this.props.book.asin}/></div>
-            }
             </Card>
-          
-
+            </>
     )}
 }
 export default SingleBook
