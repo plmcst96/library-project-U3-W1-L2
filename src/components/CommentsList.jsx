@@ -12,7 +12,7 @@ const CommentsList = (props) => {
                     <ListGroup>
                         {
                             props.comments.map(comm => 
-                                <SingleComment key={comm._id} comment = {comm}/>
+                                <SingleComment key={comm._id} comment = {comm} id={comm._id}/>
                             )
                         }     
                     </ListGroup>
