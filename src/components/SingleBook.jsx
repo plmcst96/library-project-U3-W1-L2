@@ -33,7 +33,7 @@ class SingleBook extends Component {
             </Card.Body> 
 
             {
-              this.state.selected && <CommentArea bookId ={this.props.book.asin}/>
+              this.state.selected && <div><CommentArea bookId ={this.props.book.asin}/></div>
             }
             </Card>
           

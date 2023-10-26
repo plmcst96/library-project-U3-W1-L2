@@ -47,7 +47,7 @@ class CommentArea extends Component {
                   <CommentsList comments={this.state.comments}/>
                 </Col>
                 <Col>
-                  {/* <AddComment bookId={this.props.bookId}/> */}
+                   <AddComment bookId={this.props.bookId} />  
                 </Col>
             </Row>
         </Container>
