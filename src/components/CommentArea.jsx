@@ -59,7 +59,7 @@ class CommentArea extends Component {
                   </Alert>)
                 }
                 <Col>
-                  <CommentsList comments={this.state.comments}/>
+                  <CommentsList comments={this.state.comments} refresh={this.getComments}/>
                 </Col>
                 <Col>
                    <AddComment bookId={this.props.bookId} />  

@@ -40,7 +40,7 @@ class AddComent extends Component {
 
     render(){
         return(
-            <Form onSubmit={this.postComment}>
+            <Form onSubmit={this.postComment} className="mt-3">
                 <FormGroup className="mb-3">
               <Form.Label>Lascia qui un tuo commento</Form.Label>
               <Form.Control as="textarea" rows={3} value={this.state.comment}
@@ -69,7 +69,7 @@ class AddComent extends Component {
       <option>5</option>
     </Form.Select>
     </FormGroup>
-    <Button variant="warning" type="submit">Invia!</Button>
+    <Button variant="warning" type="submit" className="my-2">Invia!</Button>
           </Form>
         )
     }

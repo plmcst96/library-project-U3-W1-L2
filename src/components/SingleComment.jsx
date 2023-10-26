@@ -11,8 +11,8 @@ const SingleComment = (props) => {
             <Container>
                 <Row>
                     <ListGroupItem>
-                        <p>Testo: {props.comment.comment}</p>
-                        <p>Voto: {props.comment.rate}</p>
+                        <p><strong>Testo:</strong> {props.comment.comment}</p>
+                        <p><strong>Voto:</strong> {props.comment.rate}</p>
                         <Button variant="danger" onClick={async () => {
                             try {
                                 const res =  await fetch('https://striveschool-api.herokuapp.com/api/comments/' + props.id, {
@@ -23,6 +23,7 @@ const SingleComment = (props) => {
                                 })
                                 if(res.ok){
                                     console.log('eliminato')
+                                    props.refresh()
                                 } else {
                                     throw new Error('Eliminazione non riuscita!')
                                 }
