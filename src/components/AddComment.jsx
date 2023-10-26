@@ -40,7 +40,7 @@ class AddComent extends Component {
 
     render(){
         return(
-            <Form onSubmit={this.postComment()}>
+            <Form onSubmit={this.postComment}>
                 <FormGroup className="mb-3">
               <Form.Label>Lascia qui un tuo commento</Form.Label>
               <Form.Control as="textarea" rows={3} value={this.state.comment}
