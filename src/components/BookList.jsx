@@ -1,13 +1,14 @@
 // import books from '../data/books/romance.json'
 import { Component } from 'react'
 import SingleBook from './SingleBook'
-import { Container, Row, Col, Form, InputGroup, FormControl } from 'react-bootstrap'
+import { Container, Row, Col, Form, InputGroup, FormControl,  } from 'react-bootstrap'
 
 
 class BookList extends Component{
 
      state = {
         searchValue: "",
+    
         // selectedCategory: fantasyBooks,
      };
 
@@ -15,7 +16,6 @@ class BookList extends Component{
   
     return(
 <Container fluid>
-
       <Row className='justify-content-center my-2'>
         <Col sm={4}>
           <Form className="d-flex">

@@ -1,7 +1,7 @@
 import { Component } from "react";
 import CommentsList from "./CommentsList";
 import AddComment from "./AddComment";
-import { Col, Container, Row } from "react-bootstrap";
+import { Alert, Col, Container, Row, Spinner } from "react-bootstrap";
 
 
 
@@ -11,6 +11,8 @@ const keyApi = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTNhNGE3
 class CommentArea extends Component {
     state = {
         comments: [],
+        isLoadin: true,
+        isError: false,
     }
     getComments = async () =>{
         try {
@@ -25,6 +27,7 @@ class CommentArea extends Component {
 
                 this.setState({
                     comments: data,
+                    isLoadin: false,
                 })
 
             } else {
@@ -32,6 +35,10 @@ class CommentArea extends Component {
             }
         } catch (error) {
             console.log('errore nel caricamneto commenti', error)
+            this.setState({
+                isLoadin: false,
+                isError: true,
+            })
         }
     }
 
@@ -43,6 +50,14 @@ class CommentArea extends Component {
         return(
         <Container>
             <Row>
+                {
+                    this.state.isLoadin && ( <div className="d-flex justify-content-center"><Spinner animation="grow" variant="info" /></div>)
+                }
+                {
+                    this.state.isError && ( <Alert variant="danger">
+                    Ritenta sarai più fortunato!
+                  </Alert>)
+                }
                 <Col>
                   <CommentsList comments={this.state.comments}/>
                 </Col>
