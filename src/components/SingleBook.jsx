@@ -1,6 +1,6 @@
 import { Card } from "react-bootstrap"
 import { Component } from "react"
-import CommentArea from "./CommentArea"
+// import CommentArea from "./CommentArea"
 // import books from '../data/books/romance.json'
 
 

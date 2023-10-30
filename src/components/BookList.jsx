@@ -9,8 +9,6 @@ class BookList extends Component{
 
      state = {
         searchValue: "",
-    
-        // selectedCategory: fantasyBooks,
      };
 
     render(){
@@ -38,8 +36,8 @@ class BookList extends Component{
     {this.props.books.filter((book) => book.title.toLowerCase().includes(this.state.searchValue.toLowerCase()))
     .map(book => {
         return(
-            <Col xs={6} md={4} lg={2} key={book.asin} className='my-2'> 
-            <SingleBook book={book}/>
+            <Col xs={6} md={4} lg={3} key={book.asin} className='my-2'> 
+            <SingleBook book={book} selected={this.props.selected}/>
             
             </Col>
         )

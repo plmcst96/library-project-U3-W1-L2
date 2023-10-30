@@ -8,7 +8,7 @@ const CommentsList = (props) => {
         return(
             <Container>
                 <Row>
-                    <h2>Recensioni</h2>
+                    {/* <h2>Recensioni</h2> */}
                     <ListGroup>
                         {
                             props.comments.map(comm => 

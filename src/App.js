@@ -32,14 +32,16 @@ class App extends Component {
         <MyNav />
         <Welcome />
         <Row>
-          <Col>
+          <Col xs={8} md={8}>
             <BookList books={romanceBooks} id={this.changeAsin} />
           </Col>
-          <Col>
+          <Col xs={4} md={4}>
+            <h2 className='text-center'>Recensioni</h2>
+            {
+              this.state.selected && <CommentArea selected={this.newSelected} id={this.changeAsin} />
+            }
           </Col>
-          {
-            this.state.selected && <CommentArea selected={this.newSelected} id={this.changeAsin} />
-          }
+
 
         </Row>
         <MyFooter />
