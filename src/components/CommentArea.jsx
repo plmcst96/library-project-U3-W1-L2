@@ -42,7 +42,7 @@ class CommentArea extends Component {
         }
     }
 
-    //  componentDidMount(){
+    // componentDidMount(){
     //      this.getComments()
     //  }
 
