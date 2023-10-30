@@ -53,7 +53,7 @@ class AddComent extends Component {
                   }}/>
             </FormGroup>
             <FormGroup>
-            <Form.Select aria-label="Rating"  value={this.state.rate}
+             <Form.Select aria-label="Rating"  value={this.state.rate}
                   onChange={(e) => {
                     this.setState({
                         allCommenta:{
@@ -61,15 +61,15 @@ class AddComent extends Component {
                         rate: e.target.value}
                     })
                   }}>
-      <option>Lascia un voto</option>
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </Form.Select>
-    </FormGroup>
-    <Button variant="warning" type="submit" className="my-2">Invia!</Button>
+                <option>Lascia un voto</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </Form.Select>
+             </FormGroup>
+              <Button variant="warning" type="submit" className="my-2">Invia!</Button>
           </Form>
         )
     }
