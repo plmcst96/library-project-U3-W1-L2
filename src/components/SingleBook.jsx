@@ -6,18 +6,19 @@ import { Component } from "react"
 
 class SingleBook extends Component {
 
-    // state = {
-    //     selected: false,
-    // }
+    state = {
+         selected: null,
+     }
 
     render(){
     return(
       <>
           
         <Card style={{height:'100%'}}
-        className={this.props.selected ? 'border-2 border-danger' : 'border-1'}>
+        className={this.props.book.asin === this.props.selectedAsin ? 'border-2 border-danger' : 'border-1'}>
             <Card.Img variant="top" src={this.props.book.img} style={{height: '280px'}}  onClick={() =>{
-            this.setState({selected: !this.props.selected})
+            this.setState({selected: !this.state.selected})
+            this.props.changeAsin(this.props.book.asin)
         }} />
             <Card.Body className='d-flex flex-column justify-content-between'>
               <Card.Title>{this.props.book.title}</Card.Title>

@@ -16,7 +16,7 @@ class CommentArea extends Component {
     }
     getComments = async () =>{
         try {
-            const res = await fetch('https://striveschool-api.herokuapp.com/api/comments/' + this.props.id, {
+            const res = await fetch('https://striveschool-api.herokuapp.com/api/comments/' + this.props.bookId, {
                 headers: {
                     Authorization: keyApi,
                 },
@@ -42,12 +42,12 @@ class CommentArea extends Component {
         }
     }
 
-     componentDidMount(){
-         this.getComments()
-     }
+    //  componentDidMount(){
+    //      this.getComments()
+    //  }
 
      componentDidUpdate(prevProps, prevState){
-        if(prevProps.id !== this.props.id){
+        if(prevProps.bookId !== this.props.bookId){
             this.getComments()
       }
     }
@@ -55,7 +55,7 @@ class CommentArea extends Component {
     render(){
         return(
         <Container>
-            <Row>
+            <Row className="flex-column">
                 {
                     this.state.isLoadin && ( <div className="d-flex justify-content-center"><Spinner animation="grow" variant="info" /></div>)
                 }

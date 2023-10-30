@@ -3,13 +3,21 @@ import { Component } from 'react'
 import SingleBook from './SingleBook'
 import { Container, Row, Col, Form, InputGroup, FormControl,  } from 'react-bootstrap'
 import { Search } from 'react-bootstrap-icons';
+import CommentArea from './CommentArea';
 
 
 class BookList extends Component{
 
      state = {
         searchValue: "",
+        selectedAsin: null,
      };
+
+     changeAsin = (newAsin)=>{
+      this.setState({
+          selectedAsin: newAsin,
+      })
+     }
 
     render(){
   
@@ -33,15 +41,22 @@ class BookList extends Component{
         </Col>
       </Row>
     <Row className='d-flex'> 
+    <Col md={6}>
+    <Row>
     {this.props.books.filter((book) => book.title.toLowerCase().includes(this.state.searchValue.toLowerCase()))
     .map(book => {
         return(
             <Col xs={6} md={4} lg={3} key={book.asin} className='my-2'> 
-            <SingleBook book={book} selected={this.props.selected}/>
+            <SingleBook book={book} changeAsin={this.changeAsin} selectedAsin={this.state.selectedAsin}/>
             
             </Col>
         )
-    })}  
+    })} 
+    </Row> 
+    </Col>
+    <Col md={6}>
+    <CommentArea bookId={this.state.selectedAsin}/>
+    </Col>
     </Row>
  </Container>           
     )
