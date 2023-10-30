@@ -54,7 +54,7 @@ class BookList extends Component{
     })} 
     </Row> 
     </Col>
-    <Col md={4} style={{position: 'sticky', right: '0px'}}>
+    <Col md={4}>
     <CommentArea bookId={this.state.selectedAsin}/>
     </Col>
     </Row>
