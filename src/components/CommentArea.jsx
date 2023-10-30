@@ -43,7 +43,10 @@ class CommentArea extends Component {
     }
 
     // componentDidMount(){
-    //      this.getComments()
+    //     if(this.props.bookId){
+
+    //         this.getComments()
+    //     }
     //  }
 
      componentDidUpdate(prevProps, prevState){
