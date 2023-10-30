@@ -41,7 +41,7 @@ class BookList extends Component{
         </Col>
       </Row>
     <Row className='d-flex'> 
-    <Col md={6}>
+    <Col md={8}>
     <Row>
     {this.props.books.filter((book) => book.title.toLowerCase().includes(this.state.searchValue.toLowerCase()))
     .map(book => {
@@ -54,7 +54,7 @@ class BookList extends Component{
     })} 
     </Row> 
     </Col>
-    <Col md={6}>
+    <Col md={4} style={{position: 'sticky', right: '0px'}}>
     <CommentArea bookId={this.state.selectedAsin}/>
     </Col>
     </Row>
