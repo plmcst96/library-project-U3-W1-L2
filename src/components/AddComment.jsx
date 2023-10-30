@@ -28,7 +28,7 @@ class AddComent extends Component {
                 alert('commento salvato!')
             } else {
                 throw new Error(
-                  "C'è stato un errore nel salvataggio della prenotazione"
+                  "C'è stato un errore nel salvataggio del commento"
                 )
               }
             
