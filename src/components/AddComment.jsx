@@ -12,6 +12,17 @@ class AddComent extends Component {
             elementId: this.props.bookId,}
     }
 
+    componentDidUpdate(prevProps){
+        if(prevProps.bookId !== this.props.bookId){
+            this.setState({
+                allCommenta:{
+                    ...this.allCommenta,
+                    elementId:this.props.bookId,
+                }
+            })
+    }
+}
+
 
     postComment = async (e)=>{
         e.preventDefault()
